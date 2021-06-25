@@ -4,6 +4,9 @@ sonar_major_version: 8
 sonar_minor_version: 8.0.42792
 sonar_version: '{{ sonar_major_version }}.{{ sonar_minor_version }}'
 
+sonar_edition: ""
+sonar_edition_internal: "{{ '' if sonar_edition=='' else sonar_edition + '-' }}"
+
 sonar_path: /opt/sonarqube
 sonar_user: sonar
 sonar_group: sonar

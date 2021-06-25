@@ -88,6 +88,8 @@ Role Variables
     default: 8
   - `sonar_minor_version` - minor number of SonarQube version\
     default: 8.0.42792
+  - `sonar_edition` - SonarQube edition with possible values: "" (empty for community edition), "developer", "enterprise", "datacenter". Commercial editions require you to define the `sonar_store` variable to the commercial distribution\
+    default: ""
   - `sonar_path` - installation directory\
     default: /opt/sonarqube
   - `sonar_user` - user for installing SonarQube\
