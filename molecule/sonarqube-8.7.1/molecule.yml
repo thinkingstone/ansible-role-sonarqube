@@ -5,10 +5,9 @@ dependency:
     role-file: requirements.yml
 driver:
   name: docker
-lint:
-  name: yamllint
-  options:
-    config-file: .yamllint
+lint: |
+  yamllint
+  ansible-lint
 platforms:
   - name: test-docker-ubuntu1804-sonarqube
     image: leandelivery/docker-systemd:ubuntu-18.04
@@ -23,13 +22,10 @@ platforms:
     capabilities:
       - SYS_ADMIN
     groups:
-      - debian_family
       - python3
 provisioner:
   name: ansible
   log: true
-  lint:
-    name: ansible-lint
   config_options:
     defaults:
       callback_whitelist: profile_tasks,timer
@@ -44,5 +40,3 @@ scenario:
   name: sonarqube-8.7.1
 verifier:
   name: ansible
-  lint:
-    name: ansible-lint

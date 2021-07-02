@@ -37,6 +37,6 @@ provisioner:
     prepare: ../resources/prepare.yml
     verify: ../resources/tests/verify.yml
 scenario:
-  name: sonarqube-8.1
+  name: sonarqube-8.8.0
 verifier:
   name: ansible
